@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'Button_Generated.dart';
 
 class Hard extends StatefulWidget {
   @override
@@ -48,7 +50,8 @@ class Dice extends StatefulWidget {
 }
 
 class _DiceState extends State<Dice> {
-  int right_image = 0;
+  int center_image = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -59,34 +62,21 @@ class _DiceState extends State<Dice> {
             onPressed: () {
               setState(
                 () {
-                  right_image = Random().nextInt(6);
+                  center_image = Random().nextInt(6);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          Button_Generated(value: center_image + 1),
+                    ),
+                  );
                 },
               );
             },
-            child: Image.asset('assets/imags/dice$right_image.png'),
+            child: Image.asset('assets/imags/dice$center_image.png'),
           ),
         ),
-        SizedBox(height: 50),
-        FlatButton(
-          child: Container(
-            child: Center(
-              child: (Text(
-                'PLAY',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy'),
-              )),
-            ),
-            margin: EdgeInsets.all(30.0),
-            height: 60,
-            width: 200,
-            decoration: BoxDecoration(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadiusDirectional.circular(20.0)),
-          ),
-        )
+        SizedBox(height: 50)
       ],
     );
   }
