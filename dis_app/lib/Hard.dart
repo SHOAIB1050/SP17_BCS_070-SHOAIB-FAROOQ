@@ -15,6 +15,24 @@ class _HardState extends State<Hard> {
         backgroundColor: Colors.purpleAccent,
       ),
     );
-    ;
+  }
+
+  Future<bool> _onBackPressed() {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("dfvsdfsdfvsd"),
+        actions: [
+          FlatButton(
+            child: Text("NO"),
+            onPressed: () => Navigator.pop(context, false),
+          ),
+          FlatButton(
+            child: Text("Yes"),
+            onPressed: () => Navigator.pop(context, true),
+          ),
+        ],
+      ),
+    );
   }
 }
