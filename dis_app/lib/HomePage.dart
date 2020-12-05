@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Hard.dart';
 import 'Simple.dart';
+import 'MainDrawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: true,
         backgroundColor: Colors.blueAccent,
       ),
+      drawer: MainDrawer(),
       body: Column(
         children: [
           Padding(
