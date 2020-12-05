@@ -8,6 +8,13 @@ class Hard extends StatefulWidget {
 class _HardState extends State<Hard> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.pink,
+      appBar: AppBar(
+        title: Text('Hard LEVEL'),
+        backgroundColor: Colors.purpleAccent,
+      ),
+    );
+    ;
   }
 }
