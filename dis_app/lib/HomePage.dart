@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'Hard.dart';
+import 'Simple.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -31,41 +33,61 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Container(
-            child: Center(
-              child: (Text(
-                'SIMPLE',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy'),
-              )),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Simple(),
+                ),
+              );
+            },
+            child: Container(
+              child: Center(
+                child: (Text(
+                  'SIMPLE',
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontFamily: 'Satisfy'),
+                )),
+              ),
+              margin: EdgeInsets.all(30.0),
+              height: 60,
+              width: 200,
+              decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadiusDirectional.circular(20.0)),
             ),
-            margin: EdgeInsets.all(30.0),
-            height: 60,
-            width: 200,
-            decoration: BoxDecoration(
-                color: Colors.pink,
-                borderRadius: BorderRadiusDirectional.circular(20.0)),
           ),
-          Container(
-            child: Center(
-              child: (Text(
-                'HARD',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy'),
-              )),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Hard(),
+                ),
+              );
+            },
+            child: Container(
+              child: Center(
+                child: (Text(
+                  'HARD',
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontFamily: 'Satisfy'),
+                )),
+              ),
+              margin: EdgeInsets.all(30.0),
+              height: 60,
+              width: 200,
+              decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadiusDirectional.circular(20.0)),
             ),
-            margin: EdgeInsets.all(30.0),
-            height: 60,
-            width: 200,
-            decoration: BoxDecoration(
-                color: Colors.pink,
-                borderRadius: BorderRadiusDirectional.circular(20.0)),
           ),
         ],
       ),
